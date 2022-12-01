@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content%}
+
+<body>
+<h1 style=" color:rgb(000,000,000,0.8)">Newsfeed</h1>
+<div class="container">
+   {% for chats in object_list %}
+   <div class="post">
+      
+     <h3>
+      <span style="color: rgb(000, 000, 000, 0.755);" class="text-muted">
+          Posted By: {{ chats.Author }} |
+         {{ chats.Date }}</span>
+      </h3>
+      <p style="font-size:20px ; color: white;"></p>
+         <a href="{% url 'details_view' chats.pk %}">{{ chats.Title }}</a>
+      <p style="color: rgb(000, 000, 000,0.755);">{{ chats.body }}</p>
+   </div>
+
+   {% endfor %}
+</div>
+</body>
+{% endblock content %}

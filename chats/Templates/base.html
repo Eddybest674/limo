@@ -1,0 +1,59 @@
+{% load static %}
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Django blog</title>
+
+<link href="{% static 'base.css' %}" rel="stylesheet">
+<style>
+   
+
+   
+</style>
+</head>
+
+<body>
+  
+  <header>
+   
+    <div class="logo"><a href="{% url 'home' %}"> <em>L</em>imo</a></div>
+    <ul class="wrapper" style="margin-right:30px;">
+      <li class="nav-list"><a style="color: white;" href="{% url 'home'%}">Home</a> </li> &nbsp; &nbsp;
+      
+      
+      <li class="nav-list"><a style="color: rgb(255, 255, 255, 1);" href="{% url 'About' %}">About</a></li> &nbsp; &nbsp;
+
+
+      <li class="nav-list"><a style="color: rgb(255, 255, 255, 1);" href="{% url 'contact' %}">Contact Us  </a></li> &nbsp; &nbsp;
+
+
+      <li class="nav-list"><a style="color: rgb(255, 255, 255, 1);" href="{% url 'privacy' %}"> Privacy policy</a>  </li>
+       
+        
+</ul>
+</div>
+      
+     
+      
+ </header>
+ <div class="movement" >
+  <a href="{% url 'new_post' %}"> Create New Post</a>
+</div>
+{% if user.is_authenticated %}
+   <p style="color: black;">Hi {{ user.username }}, Welcome to W-connect !!!</p>
+   <p style="text-align: right; float:right;"><a href="{% url 'logout' %}">Log out</a></p>
+{% else %} 
+ <h3><p style="color: black; text-align:right;">You are not logged in.</p></h3>
+ <ul>
+ <li margin-left:100px;><a href="{% url 'login' %}" style="margin-left: 900px; color:black;">Log In</a>  ||  <a href="{% url 'signup' %}" style="color:black;"> Sign up <a/>
+ </li>
+</ul>
+{% endif %}
+ <div>
+    {% block content %}
+    {% endblock content %}
+
+  </div>
+ </body>
+</html>
+    

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+ <div class="post-entry">
+  <h2 style="color: rgb(000, 000, 000,000);">{{ chats.title }}</h2>
+   <p style="color: rgb(000, 000, 000,0.755);">{{ chats.body }}</p>
+</div>
+<a href="{% url 'details_edit' chats.pk %}"> Edit Post</a>
+<p><a href="{% url 'details_delete' chats.pk %}">Delete Post</a></p>
+{% endblock content %}

@@ -1,0 +1,82 @@
+
+
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>landing page</title>
+<style>
+    
+.everything{
+	margin: 50px;
+	padding: 30px;
+	border-radius: 45px;
+	background-color: skyblue;
+    height: 50%;
+}
+
+.write, label {
+	display: flex;
+	flex-direction: column-reverse ;
+	flex-wrap: wrap;
+	border-radius: 45px;
+	background-color: black;
+	color: white;
+
+}
+
+.write{
+	background-color: greyS;
+}
+
+.everything h1 {
+	text-align: center;
+	border-radius: 20px;
+	background-color: rgba(167, 123, 111, 0.9);
+	padding: 30px;
+	margin: 20px;
+	font-size: 5rem;
+	color: wheat;
+}
+
+.continue{
+	text-align: center;
+	color: blue;
+	padding: 10px;
+	border-radius: 15px;
+	background-color: rgba(255, 83, 73, 1.0);
+
+}
+.continue h3 {
+	text-align: center;
+	color: white;
+}
+</style>
+</head>
+<body>
+<div class="everything">
+<h1><hr> Welcome to Limo-Blog landing Page <hr> </h1><br>
+
+</div>
+
+<div class="write">
+	<label><h4>This app enables users to signin, login, create post, edit and also delete their articles.
+
+Limo-blog  app is built by Edidiong Effiong, a driven software Engineer who embraces challenges and is ready to do hard things.</h4></label>
+
+	
+
+<div class="continue">
+    <a href="{% url 'signup' %}"><h3>Proceed</h3></a>
+	
+</div>
+
+
+</body>
+</html>
+
+
+{% endblock %}

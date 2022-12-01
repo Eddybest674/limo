@@ -57,7 +57,7 @@ class Details(DetailView):
 
 class About(ListView):
     model= Chats
-    template_name='chats/About.html'
+    template_name='chats/index.html'
 
 class Contact(ListView):
     model= Chats
@@ -65,7 +65,7 @@ class Contact(ListView):
 
 class Privacy(ListView):
     model= Chats
-    template_name='chats/privacy.html'
+    template_name='chats/index.html'
 
 
 

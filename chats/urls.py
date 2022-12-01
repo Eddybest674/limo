@@ -10,6 +10,6 @@ urlpatterns =[
     path('about', About.as_view(), name= 'About'),
     path("", Homepage.as_view(), name="home"),
     path("contacts", Contact.as_view(), name="contact"),
-    path("private", Privacy.as_view(), name="privacy"),
+    path("private", Privacy.as_view(), name="index"),
 ]
 
